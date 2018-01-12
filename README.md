@@ -6,7 +6,7 @@ By default theme looks like this:
 
 When previous op was unsuccessful it shows an empty heart:
 
-<img alt="fail" src="https://github.com/gko/heart-theme/raw/master/fail.png" with="50%" />
+<img alt="fail" src="https://github.com/gko/heart-theme/raw/master/fail.png" with="325px" />
 
 ## License
 
