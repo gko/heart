@@ -2,11 +2,11 @@
 
 By default theme looks like this:
 
-![theme](https://github.com/gko/heart-theme/raw/master/theme.png)
+<img alt="theme" src="https://github.com/gko/heart-theme/raw/master/theme.png" with="50%" />
 
 When previous op was unsuccessful it shows an empty heart:
 
-![fail](https://github.com/gko/heart-theme/raw/master/fail.png)
+<img alt="fail" src="https://github.com/gko/heart-theme/raw/master/fail.png" with="50%" />
 
 ## License
 
