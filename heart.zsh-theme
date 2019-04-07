@@ -1,1 +1,1 @@
-zsh/ps1.sh
+./heart.zsh
