@@ -37,7 +37,7 @@ precmd() {
 	local result=$?
 
 	PS1="
- %B%F{red}%n$_hostname %b%F{default}in %F{green}%(4~|…/%2~|%~)%f$(git_info)
+ %B%F{red}%n$_hostname %b%F{default}in %B%F{green}%(4~|…/%2~|%~)%f$(git_info)
  %F{default}"
 
 	if [[ $result -eq 0 ]]; then
