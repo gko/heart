@@ -1,4 +1,4 @@
-# Heart theme for Bash/ZSH
+# Heart theme for ZSH
 
 By default theme looks like this:
 
