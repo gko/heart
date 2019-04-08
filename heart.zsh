@@ -35,14 +35,16 @@ fi
 
 precmd() {
 	local result=$?
+	local red_color=$FG[196]
+	local green_color=$FG[070]
 
 	PS1="
- %B%F{red}%n$_hostname %b%F{default}in %B%F{green}%(4~|…/%2~|%~)%f$(git_info)
+ %B$red_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
  %F{default}"
 
 	if [[ $result -eq 0 ]]; then
-		PS1+="%B%F{red}❤ %b%F{default}"
+		PS1+="%B$red_color❤ %b%F{default}"
 	else
-		PS1+="%B%F{red}♡ %b%F{default}"
+		PS1+="%B$red_color♡ %b%F{default}"
 	fi
 }

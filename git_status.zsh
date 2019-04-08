@@ -2,12 +2,15 @@
 # Git status
 #
 
-GIT_STATUS_UNTRACKED="%B%F{cyan}?"
-GIT_STATUS_ADDED="%B%F{yellow}+"
-GIT_STATUS_MODIFIED="%B%F{red}*"
-
 get_git_status() {
 	local INDEX git_status=""
+	local red_color=$FG[196]
+	local yellow_color=$FG[214]
+	local blue_color=$FG[147]
+
+	local GIT_STATUS_UNTRACKED="%B$blue_color?"
+	local GIT_STATUS_ADDED="%B$yellow_color+"
+	local GIT_STATUS_MODIFIED="%B$red_color*"
 
 	INDEX=$(command git status --porcelain -b 2> /dev/null)
 
