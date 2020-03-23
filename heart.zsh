@@ -1,3 +1,6 @@
+# https://unix.stackexchange.com/a/302710
+unsetopt prompt_cr prompt_sp
+
 if [[ -z "$THEME_ROOT" ]]; then
 	if [[ "${(%):-%N}" == '(eval)' ]]; then
 		if [[ "$0" == '-antigen-load' ]] && [[ -r "${PWD}/heart_theme.zsh" ]]; then
