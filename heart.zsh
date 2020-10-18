@@ -38,7 +38,7 @@ fi
 
 precmd() {
 	local result=$?
-	local red_color=$FG[196]
+	local red_color=$FG[001]
 	local green_color=$FG[070]
 
 	PS1="
