@@ -37,12 +37,16 @@ if [[ ! $HOSTNAME =~ 'localhost' ]]; then
 fi
 
 precmd() {
+	# https://stackoverflow.com/a/59576993/676756
+	precmd() {
+		echo
+	}
+
 	local result=$?
 	local red_color=$FG[001]
 	local green_color=$FG[070]
 
-	PS1="
- %B$red_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
+	PS1=" %B$red_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
  %F{default}"
 
 	if [[ $result -eq 0 ]]; then
