@@ -37,10 +37,12 @@ if [[ ! $HOSTNAME =~ 'localhost' ]]; then
 fi
 
 precmd() {
-	# https://stackoverflow.com/a/59576993/676756
-	precmd() {
+	# https://stackoverflow.com/a/50103965/676756
+	if [ -z "$ADD_EMPTY_LINE_BEFORE_PROMPT" ]; then
+		ADD_EMPTY_LINE_BEFORE_PROMPT=1
+	else
 		echo
-	}
+	fi
 
 	local result=$?
 	local red_color=$FG[001]
