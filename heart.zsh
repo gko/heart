@@ -41,7 +41,12 @@ precmd() {
 	if [ -z "$ADD_EMPTY_LINE_BEFORE_PROMPT" ]; then
 		ADD_EMPTY_LINE_BEFORE_PROMPT=1
 	else
-		echo
+		# we want to add new line if the previous command wasn't clear
+		# and if it was an alias that it did't call clear
+		last_command=$(fc -ln -1)
+		if [[ "$last_command" != "clear" && ! $(alias "$last_command") =~ "=clear$" ]]; then
+			echo
+		fi
 	fi
 
 	local result=$?
