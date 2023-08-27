@@ -19,10 +19,10 @@ if [[ -z "$THEME_ROOT" ]]; then
 	fi
 fi
 
-source "$THEME_ROOT/git_status.zsh"
+source "$THEME_ROOT/git_helpers.zsh"
 
 git_info() {
-	local git_branch="$(git_current_branch)" git_status="$(get_git_status)"
+	local git_branch="$(__git_current_branch)" git_status="$(__get_git_status)"
 
 	[[ -z $git_branch ]] && return
 

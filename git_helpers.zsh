@@ -1,8 +1,4 @@
-#
-# Git status
-#
-
-get_git_status() {
+__get_git_status() {
 	local INDEX git_status=""
 	local red_color=$FG[196]
 	local yellow_color=$FG[214]
@@ -34,4 +30,18 @@ get_git_status() {
 	fi
 
 	echo $git_status
+}
+
+# https://github.com/ohmyzsh/ohmyzsh/blob/03a0d5bbaedc732436b5c67b166cde954817cc2f/lib/git.zsh#L93C1-L106C2
+function __git_current_branch() {
+	local ref
+	ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+	local ret=$?
+
+	if [[ $ret != 0 ]]; then
+		[[ $ret == 128 ]] && return  # no git repo.
+		ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+	fi
+
+	echo ${ref#refs/heads/}
 }
