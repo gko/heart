@@ -37,18 +37,6 @@ if [[ ! $HOSTNAME =~ 'localhost' ]]; then
 fi
 
 precmd() {
-	# https://stackoverflow.com/a/50103965/676756
-	if [ -z "$ADD_EMPTY_LINE_BEFORE_PROMPT" ]; then
-		ADD_EMPTY_LINE_BEFORE_PROMPT=1
-	else
-		# we want to add new line if the previous command wasn't clear
-		# and if it was an alias that it did't call clear
-		last_command=$(fc -ln -1)
-		if [[ "$last_command" != "clear" && ! $(alias "$last_command") =~ "=clear$" ]]; then
-			echo
-		fi
-	fi
-
 	local result=$?
 	local red_color=$(print -P '\e[38;5;001m')
 	local green_color=$(print -P '\e[38;5;070m')
@@ -62,3 +50,9 @@ precmd() {
 		PS1+="%B$red_color♡ %b%F{default}"
 	fi
 }
+
+__add_new_line_before_prompt() {
+	print
+}
+
+add-zsh-hook precmd __add_new_line_before_prompt
