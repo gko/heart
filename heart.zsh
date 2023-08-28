@@ -38,8 +38,8 @@ fi
 
 precmd() {
 	local result=$?
-	local red_color=$(print -P '\e[38;5;001m')
-	local green_color=$(print -P '\e[38;5;070m')
+	local red_color="%{[38;5;001m%}"
+	local green_color="%{[38;5;070m%}"
 
 	PS1=" %B$red_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
  %F{default}"

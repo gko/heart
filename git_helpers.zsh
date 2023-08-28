@@ -1,8 +1,8 @@
 __get_git_status() {
 	local INDEX git_status=""
-	local red_color=$FG[196]
-	local yellow_color=$FG[214]
-	local blue_color=$FG[147]
+	local red_color="%{[38;5;196m%}"
+	local yellow_color="%{[38;5;214m%}"
+	local blue_color="%{[38;5;147m%}"
 
 	local GIT_STATUS_UNTRACKED="%B$blue_color?"
 	local GIT_STATUS_ADDED="%B$yellow_color+"
