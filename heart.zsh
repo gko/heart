@@ -79,17 +79,17 @@ git_info() {
 
 precmd() {
 	local result=$?
-	local red_color="%{[38;5;001m%}"
+	local maroon_color="%{[38;5;001m%}"
 	local green_color="%{[38;5;070m%}"
 	local _hostname="%b%F{default} at %m"
 
-	PS1=" %B$red_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
+	PS1=" %B$maroon_color%n$_hostname %b%F{default}in %B$green_color%(4~|…/%2~|%~)%f$(git_info)
  %F{default}"
 
 	if [[ $result -eq 0 ]]; then
-		PS1+="%B$red_color❤ %b%F{default}"
+		PS1+="%B$maroon_color❤ %b%F{default}"
 	else
-		PS1+="%B$red_color♡ %b%F{default}"
+		PS1+="%B$maroon_color♡ %b%F{default}"
 	fi
 }
 
